@@ -1,9 +1,10 @@
-# 🔐 IAM Access Review
+# IAM Access Review 🔐
 
 ## 1. Scenario 
  - 𝐍𝐨𝐫𝐭𝐡𝐰𝐢𝐧𝐝 𝐇𝐞𝐚𝐥𝐭𝐡, a 120-person US healthcare SaaS company that stores patient data (ePHI) for around 400 clinics.
 
 `I’ve just joined the security team and get my first task. `
+
 
 **Context / Ticket from IT Manager:**
 
@@ -13,12 +14,12 @@
 > Here are both exports.
 
 > Tell me what's wrong, what to fix first, and how we stop it happening again."
-
+                    
 *Date of Audit: 5 October 2026*
 
 ---
 
-### 📂 1. Raw Data Provided
+### 📂 Raw Data Provided
 
 **HR Export:**
 | Name | ID | Status | End date | Department |
