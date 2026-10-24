@@ -44,3 +44,23 @@
 
 ---
 
+### 🎯 Audit Findings & Deliverables
+
+**Findings Table**
+| Account | Issue | Why it's a risk | Severity | Recommended Action |
+| :--- | :--- | :--- | :--- | :--- |
+| **treyes** | User end date: **2026-07-31**, last login: **2026-09-28** *Unrecognized login to Inactive identity* | Orphaned account | **Critical** | Delete or deprovision |
+| **skim** | User end date: **2026-08-15**, last login: **2026-09-02** *Unrecognized login to Inactive identity* | Orphaned account | **Critical** | Delete or deprovision |
+| **support-shared** |  |  | High |  |
+| **testadmin** |  |  | High |  |
+
+**Top Priority**
+
+
+**Prevention Strategies**
+* **Leavers & Expired Contractors:** 
+* **Shared Accounts:** 
+* **Orphaned Accounts:** 
+
+**Executive Summary**
+
