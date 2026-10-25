@@ -68,13 +68,17 @@ According to the logs: (- User end date: **2026-07-31** - Last login: **2026-09-
 **Prevention Strategies**
 * **Leavers & Expired Contractors:** *Integrate internal HR-department database of leavers & expired contractors with IdP, to proceed with automatic Offboarding process.*
 * **Shared Accounts:** *Update security policy about shared accounts and provide a security awareness training for employees.*
-* **Orphaned Accounts:** *Proceeding a weekly monitoring of user accounts.*
+* **Orphaned Accounts:** *Implement weekly monitoring of user accounts.*
 
 **Executive Summary:**
 
-Current state of Nortwind Health internal user-accounts network creates a critical daily risk of reputation loss, patient (ePHI) data stolen and company's main work processes shut-down. 
+Current state of Northwind Health internal user-accounts network creates a critical daily risk of reputation loss, patient (ePHI) data theft and company's main work processes shut-down. 
 
-Audit identified 2 old employees accounts, including the 1 with Admin rights, under the critical level of risk, and using of Generic/Shared accountts. 
+Audit identified 2 old employees accounts, including the 1 with Admin rights, under the critical level of risk, and using of Generic/Shared accounts. 
 
-**Immediate actions to prevent attacks occurring is highly recommended.**
+**Immediate actions to prevent attacks occurring are highly recommended.**
+
+--- 
+
+## What I Learned:
 
