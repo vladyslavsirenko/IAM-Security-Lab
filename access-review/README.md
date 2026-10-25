@@ -55,7 +55,7 @@
 | **testadmin** | Orphaned account with **Admin rights** | Ready-to-enter Backdoor | High | **1.** Disable account immediately **2.** Delete account permanently |
 | **pnair** | No issues | - | None | No actions needed. |
 | **dholt** | Permanent Admin rights, *violation of PoLP (Principle of Least Privilege)* | **High risk for unauthorized data alteration or exfiltration**, *Segregation of Duties (SoD) violation* | High | **1.** Revision of current user access rights **2.** Segregate and downgrade user rights to lower level **3.** Remain access to "test" branches on GitLab / GitHub projects |
-| **lgrant** | Dormant Account | Dormant account that threat actor likelihood target | Moderate | **1.** Transfer account into a "Disable" group until employee is back  |
+| **lgrant** | Dormant Account | Employee account that Threat Actor likelihood target | Moderate | **1.** Transfer account into a "Disable" group until employee is back  |
 
 
 **Top Priority**
