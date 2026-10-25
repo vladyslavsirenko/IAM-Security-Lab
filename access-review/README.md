@@ -66,7 +66,7 @@ According to the logs: (- User end date: **2026-07-31** - Last login: **2026-09-
 ❗**Company's, Patient & Clients confidential data might be already extracted, or the next login can be an already prepared attack.**
 
 **Prevention Strategies**
-* **Leavers & Expired Contractors:** *Initiate immediately Offboarding process, if fail, investigate the root issues, troubleshoot and repeat.*
+* **Leavers & Expired Contractors:** *Integrate internal HR-department database of leavers & expired contractors with IdP to proceed with automatic Offboarding process*
 * **Shared Accounts:** *Update security policy about shared accounts and provide a security awareness training for employees.*
 * **Orphaned Accounts:** *Proceeding a weekly monitoring of user accounts.*
 
