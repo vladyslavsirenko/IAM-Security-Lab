@@ -60,7 +60,7 @@
 
 **📌 Top Priority:**
 
-The `treyes` account. **IMMIDIATE ACTIONS NEEDED.** This account has the highest `Admin` level of rights and accesses. 
+The `treyes` account. **IMMEDIATE ACTIONS NEEDED.** This account has the highest `Admin` level of rights and accesses. 
 
 According to the logs: (- User end date: **2026-07-31** - Last login: **2026-09-28**), this account is already **compromised** by unknown identity. 
 ❗**Company's, Patient & Clients confidential data might be already extracted, or the next login can be an already prepared attack.**
@@ -70,7 +70,11 @@ According to the logs: (- User end date: **2026-07-31** - Last login: **2026-09-
 * **Shared Accounts:** *Update security policy about shared accounts and provide a security awareness training for employees.*
 * **Orphaned Accounts:** *Proceeding a weekly monitoring of user accounts.*
 
-**Executive Summary**
+**Executive Summary:**
 
-Current state of Nortwind Health internal user-accounts network creates a critical daily risk of reputation loss, patient (ePHI) data stealed and company's main work processes shut-down. Immediate actions to prevent attacks occurring is needed.
+Current state of Nortwind Health internal user-accounts network creates a critical daily risk of reputation loss, patient (ePHI) data stolen and company's main work processes shut-down. 
+
+Audit identified 2 old employees accounts, including the 1 with Admin rights, under the critical level of risk, and using of Generic/Shared accountts. 
+
+**Immediate actions to prevent attacks occurring is highly recommended.**
 
