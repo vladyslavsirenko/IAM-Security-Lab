@@ -51,8 +51,12 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **treyes** | User end date: **2026-07-31**, last login: **2026-09-28**, *Unrecognized login to Inactive identity* | ❗ **Compromised** Active Leaver Account with **Admin rights** | **Critical** | **1.** Disable / Suspend immediately **2.** Revoke active sessions **3.** Initiate Incident Response (investigate logs for data exfiltration) |
 | **skim** | User end date: **2026-08-15**, last login: **2026-09-02**, *Unrecognized login to Inactive identity* | ❗ **Compromised** Failed Offboarding account | **Critical** | **1.** Disable / Suspend immediately **2.** Revoke active sessions **3.** Initiate Incident Response (investigate logs for data exfiltration) |
-| **support-shared** | Unauthenticated Inauthentic identity | Lack of Accountability | High | **1.** Revoke active sessions **2.** Investigate, sort and store the data **3.** Disable / Terminate |
-| **testadmin** | Unauthenticated Inactive identity | Orphaned account with **Admin rights** | High | **1.** Investigate, sort and store the data **2.** Initiate Offboarding |
+| **support-shared** | Shared/Generic account | Lack of Accountability | High | **1.** Create individual named accounts for the support team **2.** Migrate users to individual accounts **3.** Disable the shared account |
+| **testadmin** | Orphaned account with **Admin rights** | Ready-to-enter Backdoor | High | **1.** Disable account immediately **2.** Delete account permanently |
+| **pnair** | No issues | - | None | No actions needed. |
+| **dholt** | Permanent Admin rights, *violation of PoLP (Principle of Least Privilege)* | Segregation of Duties (SoD) violation, high risk for unauthorized date alteration or exfiltration | High | **1.** Revision of current user access rights **2.** Segregate and downgrade user rights to lower level **3.** Remain access to "test" branches on GitLab / GitHub projects |
+| **lgrant** | Dormant Account | Dormant account that threat actor likelihood target | Moderate | **1.** Transfer account into a "Disable" group until employee is back  |
+
 
 **Top Priority**
 
