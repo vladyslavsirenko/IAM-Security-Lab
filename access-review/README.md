@@ -51,8 +51,8 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **treyes** | User end date: **2026-07-31**, last login: **2026-09-28**, *Unrecognized login to Inactive identity* | ❗ **Compromised** Active Leaver Account with **Admin rights** | **Critical** | **1.** Disable / Suspend immediately **2.** Revoke active sessions **3.** Initiate Incident Response (investigate logs for data exfiltration) |
 | **skim** | User end date: **2026-08-15**, last login: **2026-09-02**, *Unrecognized login to Inactive identity* | ❗ **Compromised** Failed Offboarding account | **Critical** | **1.** Disable / Suspend immediately **2.** Revoke active sessions **3.** Initiate Incident Response (investigate logs for data exfiltration) |
-| **support-shared** |  | | High |  |
-| **testadmin** |  | Orphaned account | High |  |
+| **support-shared** | Unauthenticated Inauthentic identity | Lack of Accountability | High | **1.** Revoke active sessions **2.** Investigate, sort and store the data **3.** Disable / Terminate |
+| **testadmin** | Unauthenticated Inactive identity | Orphaned account with **Admin rights** | High | **1.** Investigate, sort and store the data **2.** Initiate Offboarding |
 
 **Top Priority**
 
