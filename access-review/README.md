@@ -70,7 +70,7 @@ According to the logs: (- User end date: **2026-07-31** - Last login: **2026-09-
 * **Shared Accounts:** *Update security policy about shared accounts and provide a security awareness training for employees.*
 * **Orphaned Accounts:** *Implement weekly monitoring of user accounts.*
 
-**Executive Summary:**
+### **Executive Summary:**
 
 Current state of Northwind Health internal user-accounts network creates a critical daily risk of reputation loss, patient (ePHI) data theft and company's main work processes shut-down. 
 
@@ -80,7 +80,7 @@ Audit identified 2 old employees accounts, including the 1 with Admin rights, un
 
 --- 
 
-## What I learned:
+## 💡 What I learned:
 
 This was my first IAM audit, and my first draft had a lot of mistakes. I found the right critical accounts, but definition of issues/why it's risk that assigned to them were wrong, and the wrong definitions leads to the wrong fix. 🛠️
 
@@ -96,7 +96,7 @@ I asked Gemini PRO about this situation and it pointed me on my mistake, the rig
 
 ### **Dormant accounts.** 
 I learned that an account nobody uses is called dormant. `lgrant` is on leave, so it isn't suspicious by itself, but an unused account is still a good target for an attacker because nobody notices if it gets used. 
-I read how sysadmins handle users on leave ([thread on reddit](https://www.reddit.com/r/sysadmin/comments/batdax/dealing_with_users_access_while_on_leave/)) and decided to move the account to a disabled group until she's back, instead of deleting it.
+I read how sysadmins handle users on leave ([thread on Reddit](https://www.reddit.com/r/sysadmin/comments/batdax/dealing_with_users_access_while_on_leave/)) and decided to move the account to a disabled group until she's back, instead of deleting it.
 
 ### **PoLP and SoD.** 
 `dholt` is a current employee, **but he has permanent Admin rights.** That breaks the Principle of Least Privilege *(people get only the access they need to perform their job and nothing beyond of that)* and Segregation of Duties *(no single person should control everything alone / from start to end processes, e.g a developer that writes code and has right to deploy it without QA approval).*
