@@ -80,5 +80,20 @@ Audit identified 2 old employees accounts, including the 1 with Admin rights, un
 
 --- 
 
-## What I Learned:
+## What I learned:
+
+This was my first IAM audit, and my first draft had a lot of mistakes. I found the right critical accounts, but definition of issues/why it's risk that assigned to them were wrong, and the wrong definitions leads to the wrong fix.
+
+**Orphaned accounts.** I labeled `treyes` and `skim` as "orphaned" and wanted to delete them. Then I looked up what orphaned actually means: an account nobody owns. These two do have owners in HR, they just left and their access was never removed, and someone logged in after that. Deleting them would destroy the evidence, so the right fix is to disable them and investigate. The only truly orphaned account in the list was `testadmin`.
+
+**Shared account.** I wanted to simply disable `support-shared`, but the whole support team works through it and they would lose access. I asked Gemini PRO about this situation and it pointed me on my mistake, the right move was to: create a separate account for each employee, move them over, and only then disable the shared one.
+
+**Dormant accounts.** I learned that an account nobody uses is called dormant. `lgrant` is on leave, so it isn't suspicious by itself, but an unused account is still a good target for an attacker because nobody notices if it gets used. 
+I read how sysadmins handle users on leave ([thread](https://www.reddit.com/r/sysadmin/comments/batdax/dealing_with_users_access_while_on_leave/)) and decided to move the account to a disabled group until she's back, instead of deleting it.
+
+**PoLP and SoD.** `dholt` is a current employee, but he has permanent Admin rights. That breaks the Principle of Least Privilege (people get only the access they need to perform their job and nothing beyond of that) and Segregation of Duties (no single person should control everything alone / from start to end processes, e.g  ).
+
+**Risk scoring.** To rate severity I used the OWASP Risk Rating Methodology (likelihood × impact = risk level) instead of guessing. A leaver with Admin rights who logged in after the end date is Critical. A dormant Support Agent account is Moderate.
+
+**Main takeaway.** I'm glad I made these mistakes on my own. Contain and preserve first, clean up later, and check the current employees too, not only the ones who left. This is the main lessons.
 
