@@ -28,3 +28,8 @@
 | Erin | Finance Manager | | ✓ | | | ✓ | ✓ | |
 | Fraser | IT Support | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
+**What each job actually needs (from the job descriptions):**
+* **Billing Clerk:** create invoices, update patient billing details
+* **Billing Supervisor:** everything a clerk does, plus approve refunds
+* **Finance Manager:** approve payments, export billing data for monthly reporting
+* **IT Support:** keep the system running, no involvement in financial decisions
