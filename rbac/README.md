@@ -16,5 +16,15 @@
 
 ---
 
+### 📂 Raw Data Provided
 
+**Current access in the Billing system:**
+| Person | Job title | Create invoices | Approve refunds | Edit patient billing details | Create new payee | Approve payments | Export all billing data | System admin |
+|---|---|---|---|---|---|---|---|---|
+| Ana | Billing Clerk | ✓ | | ✓ | | | ✓ | |
+| Ben | Billing Clerk | ✓ | ✓ | ✓ | ✓ | | | |
+| Chloe | Billing Clerk | ✓ | | ✓ | | | | |
+| Dev | Billing Supervisor | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
+| Erin | Finance Manager | | ✓ | | | ✓ | ✓ | |
+| Fraser | IT Support | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
