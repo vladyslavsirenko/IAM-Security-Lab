@@ -33,3 +33,15 @@
 * **Billing Supervisor:** everything a clerk does, plus approve refunds
 * **Finance Manager:** approve payments, export billing data for monthly reporting
 * **IT Support:** keep the system running, no involvement in financial decisions
+
+---
+
+### 🎯 Audit Findings & Deliverables
+
+**1. Role Design (RBAC Matrix)**
+| Role | Allowed Permissions | --- | --- |
+| :--- | :--- | :--- | :--- |
+| **Billing Clerk** | Create invoices | Edit patient billing details |
+| **Billing Supervisor** | Create invoices | Edit patient billing details | Approve refunds |
+| **Finance Manager** | Approve payments | Export all billing data |
+| **IT Support** | System admin |
