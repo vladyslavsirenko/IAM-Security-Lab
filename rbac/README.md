@@ -39,9 +39,9 @@
 ### 🎯 Audit Findings & Deliverables
 
 **1. Role Design (RBAC Matrix)**
-| Role | Allowed Permissions | --- | --- |
-| :--- | :--- | :--- | :--- |
-| **Billing Clerk** | Create invoices | Edit patient billing details |
-| **Billing Supervisor** | Create invoices | Edit patient billing details | Approve refunds |
-| **Finance Manager** | Approve payments | Export all billing data |
+| Role | Allowed Permissions |
+| :--- | :--- |
+| **Billing Clerk** | Create invoices, Edit patient billing details |
+| **Billing Supervisor** | Create invoices, Edit patient billing details, Approve refunds |
+| **Finance Manager** | Approve payments, Export all billing data |
 | **IT Support** | System admin |
