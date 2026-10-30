@@ -45,3 +45,11 @@
 | **Billing Supervisor** | Create invoices, Edit patient billing details, Approve refunds |
 | **Finance Manager** | Approve payments, Export all billing data |
 | **IT Support** | System admin |
+
+**2. Segregation of Duties (SoD) - Includes next restricted combinations of permissions:** 
+| **Combination** | **Why? / Risk Level**
+| :--- | :--- |
+| Create invoices + Approve refunds| :--- | 
+| Update patient billing details + Export billing data for monthly reporting | :--- |
+
+
