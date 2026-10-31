@@ -53,7 +53,7 @@
 
 According to the SoD. Stack of permissions for single employee that covering from start-to-end work process and doesn't include approval from authority above – creates a significant high-risk for organization.
 
-*Please note that they're already exist within our internal organization employees' access and permissions system.*
+***Please note,** that they're already exist within our internal organization employees' access and permissions system.*
 
 **This can lead to:**
 - Governance loss
@@ -62,10 +62,10 @@ According to the SoD. Stack of permissions for single employee that covering fro
 - Reputation loss
 
 **To proceed with fixes properly, I've made a list of such permissions currently present on our workers below:** 
-| Person | Job title (Role) | **Access Combination** |
-| :--- | :--- | :--- |
-| Ana | Billing Clerk | Create invoices, Edit patient billing details + **🚩 Export all billing data** |
-| Ben | Billing Clerk | Create invoices, Edit patient billing details	+ **🚩 Approve refunds	+ 🚩 Create new payee** |
-| 
+| Person | Role | **Access** | **Permissions that creates risk**
+| :--- | :--- | :--- | :--- |
+| Ana | Billing Clerk | Create invoices, Edit patient billing details | **+ Export all billing data 🚩** |
+| Ben | Billing Clerk | Create invoices, Edit patient billing details	| **+ Approve refunds 🚩	+ Create new payee 🚩** |
+| Dev | Billing Supervisor | Create invoices, Edit patient billing details, Approve refunds | **+ Create new payee 🚩 + Approve payments 🚩 + Export all billing data 🚩** |
 
 
