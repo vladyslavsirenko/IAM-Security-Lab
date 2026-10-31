@@ -51,15 +51,15 @@
 **2. Segregation of Duties (SoD)**
 ‼️**IMMEDIATE ACTIONS NEEDED.**
 
-According to the SoD. Stack of permissions for single employee that covering from start-to-end work process and doesn't include approval from authority above – creates a significant high-risk for organization.
+According to SoD principles, assigning a single employee end-to-end permissions for a workflow without oversight creates a significant security risk. 
 
-***Please note,** that they're already exist within our internal organization employees' access and permissions system.*
+**Please note that these toxic combinations currently exist within our access control system.**
 
 ---
 
 **This can lead to:**
 - Governance loss
-- Compromising of patient confidential data
+- Compromise of confidential patient data
 - Financial fraud
 - Reputation loss
 
@@ -81,26 +81,68 @@ According to the SoD. Stack of permissions for single employee that covering fro
 | Erin  | Finance Manager | Approve payments, export all billing data | + Approve refunds 🚩 **(1)** |
 | **Fraser** | IT Support | System administrator | **+ Create invoices 🚩 + Approve refunds 🚩 + Edit patient billing details 🚩 + Create new payee 🚩 + Approve payments 🚩 + Export all billing data 🚩** **(6)** |
 
-Now when we had investigated target permissions-issues per person, to prevent a slowdown of our organization workflow by just deleting the permissions, it is important to provide a smooth access migration first.
+*To prevent business disruption, we must implement a smooth access migration rather than abruptly revoking current permissions.*
 
 ---
 
 **3. Rollout & Migration Plan**
 
-**📌 Top priority:**
+**📌 Top priority: `Fraser`**
 
-**`Fraser`**, his IT Support role should include only System admin permissions, however, he has all financial department permissions additionally.
+Fraser's IT Support role should strictly include System Admin permissions. **However, he currently holds all financial department access as well.**
 
 
 **Permissions to remove: 6**
 
-- Create invoices 🚩 
-- Approve refunds 🚩 
-- Edit patient billing details 🚩
-- Create new payee 🚩 
-- Approve payments 🚩 
-- Export all billing data 🚩 
+- Create invoices ❌ 
+- Approve refunds ❌ 
+- Edit patient billing details ❌
+- Create new payee ❌ 
+- Approve payments ❌ 
+- Export all billing data ❌ 
 
+Recommended Actions:
 | **Step 1** | **Step 2** | **Step 3** | **Step 4** |
 | :--- | :--- | :--- | :--- |
-| Create a new role duplicate with ONLY needed permissions from Role Design (RBAC Matrix), "system admin". | Assign **`Fraser`** to a new duplicated role. | Inform employee about the permissions migration and monitor how things works. | When tests done and new proper role works, remove old one from employee. |
+| Create a new role with strictly required permissions based on the RBAC Matrix ("System Admin"). | Assign **`Fraser`** to this new role (alongside his legacy access). | Inform the employee about the upcoming migration and monitor system functionality. | Once verified that the new role provides necessary access, revoke the legacy permissions. |
+
+**Bonus Step 5: (JIT) Access**
+
+To ensure `Fraser` can troubleshoot critical system issues without holding permanent financial access, we must implement **Just-In-Time (JIT) Access**. 🔑 
+
+If a severe incident occurs in the Billing system, `Fraser` can request temporary, time-bound elevated permissions *(e.g., for 2 hours)*.
+
+**This request must require managerial approval and trigger an audit alert.** Once the time window expires, the system will automatically revoke the permissions, ensuring zero standing privileges (ZSP).
+
+---
+
+**👥 Billing Department Migration (Ana, Ben, Dev, Erin)**
+
+> To resolve the remaining SoD violations and Privilege Creep across the Billing department, **we will apply the same parallel-run migration strategy.**
+
+**Permissions to be removed based on the findings per person table:**
+  
+**`Ana`: 1**
+ - Export all billing data ❌
+   
+**`Ben`: 2**
+- Approve refunds ❌
+- Create new payee ❌
+  
+**`Dev`: 3**
+- Create new payee ❌
+- Approve payments ❌
+- Export all billing data ❌
+  
+**`Erin`: 1**
+- Approve refunds ❌
+
+Recommended Actions:
+| **Step 1** | **Step 2** | **Step 3** | **Step 4** |
+| :--- | :--- | :--- | :--- |
+| Create the new clean roles in the system (`Billing Clerk`, `Billing Supervisor`, `Finance Manager`) strictly based on the **RBAC Matrix**. | Assign each employee to their respective new role alongside their legacy individual permissions. | Communicate the transition to the Billing team and monitor operations for 1-2 weeks to ensure no workflows are broken. | Once the new roles are verified as sufficient for daily tasks, permanently revoke all legacy "per-request" permissions. |
+
+---
+
+## 💡 What I learned:
+
