@@ -39,7 +39,7 @@
 ### 🎯 Audit Findings & Deliverables
 
 **1. Role Design (RBAC Matrix)**
-| Role | Allowed Permissions |
+| Role | Allowed permissions |
 | :--- | :--- |
 | **Billing Clerk** | Create invoices, Edit patient billing details |
 | **Billing Supervisor** | Create invoices, Edit patient billing details, Approve refunds |
@@ -62,10 +62,10 @@ According to the SoD. Stack of permissions for single employee that covering fro
 - Reputation loss
 
 **To proceed with fixes properly, I've made a list of such permissions currently present on our workers below:** 
-| Person | Role | **Access** | **Permissions that creates risk**
+| Person | Role | **Allowed permissions** | **Error permissions**
 | :--- | :--- | :--- | :--- |
-| Ana | Billing Clerk | Create invoices, Edit patient billing details | **+ Export all billing data 🚩** |
-| Ben | Billing Clerk | Create invoices, Edit patient billing details	| **+ Approve refunds 🚩	+ Create new payee 🚩** |
-| Dev | Billing Supervisor | Create invoices, Edit patient billing details, Approve refunds | **+ Create new payee 🚩 + Approve payments 🚩 + Export all billing data 🚩** |
-
-
+| Ana | Billing Clerk | Create invoices, edit patient billing details | + Export all billing data 🚩 **(1)** |
+| **Ben** | Billing Clerk | Create invoices, edit patient billing details	| **+ Approve refunds 🚩	+ Create new payee 🚩** **(2)** |
+| **Dev** | Billing Supervisor | Create invoices, edit patient billing details, approve refunds | **+ Create new payee 🚩 + Approve payments 🚩 + Export all billing data 🚩** **(3)** |
+| Erin  | Finance Manager | Approve payments, export all billing data | + Approve refunds 🚩 **(1)** |
+| **Fraser** | IT Support | System administrator | **+ Create invoices 🚩 + Approve refunds 🚩 + Edit patient billing details 🚩 + Create new payee 🚩 + Approve payments 🚩 + Export all billing data 🚩** **(6)** |
