@@ -68,6 +68,7 @@ According to the SoD. Stack of permissions for single employee that covering fro
 - **Create new payee + Approve payments** ➔ ⚠️ Risk of *Embezzlement via fake vendors* (Ghost Vendor fraud).
 
 - **Create invoices + Approve refunds** ➔ ⚠️ Risk of *Refund Fraud* (routing funds to personal accounts).
+> A single identity can create/modify a vendor profile and approve payments to that same vendor, creating a high fraud risk.
 
 ---
 
@@ -79,3 +80,27 @@ According to the SoD. Stack of permissions for single employee that covering fro
 | **Dev** | Billing Supervisor | Create invoices, edit patient billing details, approve refunds | **+ Create new payee 🚩 + Approve payments 🚩 + Export all billing data 🚩** **(3)** |
 | Erin  | Finance Manager | Approve payments, export all billing data | + Approve refunds 🚩 **(1)** |
 | **Fraser** | IT Support | System administrator | **+ Create invoices 🚩 + Approve refunds 🚩 + Edit patient billing details 🚩 + Create new payee 🚩 + Approve payments 🚩 + Export all billing data 🚩** **(6)** |
+
+Now when we had investigated target permissions-issues per person, to prevent a slowdown of our organization workflow by just deleting the permissions, it is important to provide a smooth access migration first.
+
+---
+
+**3. Rollout & Migration Plan**
+
+**📌 Top priority:**
+
+**`Fraser`**, his IT Support role should include only System admin permissions, however, he has all financial department permissions additionally.
+
+
+**Permissions to remove: 6**
+
+- Create invoices 🚩 
+- Approve refunds 🚩 
+- Edit patient billing details 🚩
+- Create new payee 🚩 
+- Approve payments 🚩 
+- Export all billing data 🚩 
+
+| **Step 1** | **Step 2** | **Step 3** | **Step 4** |
+| :--- | :--- | :--- | :--- |
+| Create a new role duplicate with ONLY needed permissions from Role Design (RBAC Matrix), "system admin". | Assign **`Fraser`** to a new duplicated role. | Inform employee about the permissions migration and monitor how things works. | When tests done and new proper role works, remove old one from employee. |
