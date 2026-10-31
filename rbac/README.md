@@ -55,13 +55,23 @@ According to the SoD. Stack of permissions for single employee that covering fro
 
 ***Please note,** that they're already exist within our internal organization employees' access and permissions system.*
 
+---
+
 **This can lead to:**
 - Governance loss
 - Compromising of patient confidential data
 - Financial fraud
 - Reputation loss
 
-**To proceed with fixes properly, I've made a list of such permissions currently present on our workers below:** 
+**Toxic Combinations Identified:**
+
+- **Create new payee + Approve payments** ➔ ⚠️ Risk of *Embezzlement via fake vendors* (Ghost Vendor fraud).
+
+- **Create invoices + Approve refunds** ➔ ⚠️ Risk of *Refund Fraud* (routing funds to personal accounts).
+
+---
+
+**To proceed with fixes properly, I've prepared a findings per person list:** 
 | Person | Role | **Allowed permissions** | **Error permissions**
 | :--- | :--- | :--- | :--- |
 | Ana | Billing Clerk | Create invoices, edit patient billing details | + Export all billing data 🚩 **(1)** |
