@@ -49,23 +49,23 @@
 ---
 
 **2. Segregation of Duties (SoD)**
-**IMMEDIATE ACTIONS NEEDED.**
+‼️**IMMEDIATE ACTIONS NEEDED.**
 
-According to the SoD. **Stack of permissions for single employee, that covering from start-to-end work process and doesn't include approval from authority above, creates a significant high-risk for organization.**
+According to the SoD. Stack of permissions for single employee that covering from start-to-end work process and doesn't include approval from authority above - creates a significant high-risk for organization.
 
-*Please note that they're already exist within our internal organization employees' access and permissions system.*
+|**`Please note that they're already exist within our internal organization employees' access and permissions system.`**|
 
-This can lead to:
+**This can lead to:**
+- Governance loss
 - Compromising of clients and organization internal data
-- Financial fraud 
+- Financial fraud
 - Reputation loss
 
-To proceed with fixes properly, I listed examples of such permissions below. 
-This list includes next restricted combinations of permissions:
-| **Combination** |
+To proceed with fixes properly, **I've made a list of such permissions below:** 
+| **Access Combination** |
 | :--- |
-| Create invoices + Approve refunds|
-| Update patient billing details + Export billing data for monthly reporting |
+| 🚩 Create invoices + Approve refunds|
+| 🚩 Update patient billing details + Export billing data for monthly reporting |
 
 
 
