@@ -146,3 +146,25 @@ Recommended Actions:
 
 ## 💡 What I learned:
 
+Week 2 was a different kind of task. Instead of finding bad accounts, I had to design the access properly for a Billing and flag what shouldn't be allowed in the first place. Everyone had access that was given by "one request at a time", and my job was to turn that mess into clean roles. 
+
+### **Role Design (RBAC Matrix).** 
+RBAC (Role-Based Access Control) means permissions are attached to a **role**, not to each person individually ([IBM explains it well](https://www.ibm.com/topics/rbac)). I took what each job actually needs from the job descriptions and turned it into a matrix with 4 roles: Billing Clerk, Billing Supervisor, Finance Manager and IT Support. Then I compared every person's current access with their role, and it was easy to see who had too much.
+
+Because access had been given one request at a time, permissions piled up over time (privilege creep). The biggest case was `Fraser` from IT Support: besides System Admin, he also had all 6 financial permissions.
+
+### **Segregation of Duties and Toxic Combinations.** 
+Last time I only learned what SoD is, this time I used it. A toxic combination is a pair of permissions that are harmless alone, but dangerous when one person holds both ([Okta](https://www.okta.com/blog/2025/05/prevent-toxic-access-combinations-with-separation-of-duties-in-okta-identity), [SecurEnds](https://www.securends.com/blog/toxic-combinations-in-sod/)). Nobody is checking that person's work. I found two in this lab:
+
+- **Create new payee + Approve payments** ➔ Ghost Vendor fraud: someone creates a fake vendor and pays it.
+- **Create invoices + Approve refunds** ➔ Refund fraud: money gets routed to personal accounts.
+
+### **Smooth Rollout & Migration Plan.** 
+Taking the extra permissions away immediately could break someone's daily work. So I used a parallel run: create the new clean roles, assign them next to the old permissions, tell the team and monitor for 1-2 weeks, and only then revoke the legacy access. It's the same idea as with `support-shared` in my [first lab](https://github.com/vladyslavsirenko/IAM-Security-Lab/blob/test/access-review/README.md): replace first, remove after.
+
+### **Just-In-Time (JIT) Access.** 
+`Fraser` is my top priority, but IT Support still needs a way to fix critical issues in the Billing system. JIT solves this: instead of permanent financial access, he can request temporary permissions (for example for 2 hours), a manager approves it, an audit alert is triggered, and the access is removed automatically when the time is over. This is called Zero Standing Privileges ([CrowdStrike](https://www.crowdstrike.com/en-us/cybersecurity-101/identity-security/just-in-time-access/)). In Microsoft Entra, this is done with [Privileged Identity Management (PIM)](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure).
+
+**Main takeaway:** 
+good access design isn't about taking everything away. It's giving each role exactly what the job needs, making sure no one can run a risky process from start to end alone, and removing the extra access without breaking the business.
+
