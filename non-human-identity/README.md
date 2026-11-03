@@ -16,3 +16,5 @@
 *Date of Audit: 19 October 2026*
 
 ---
+
+- **What SupportBot is for:** answer clinic staff questions about appointment and billing status, create support tickets, and draft replies for a human agent to approve.
