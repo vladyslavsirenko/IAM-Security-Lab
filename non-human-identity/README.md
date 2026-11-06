@@ -70,8 +70,8 @@
 | 2 | 𝑅𝑒𝑎𝑑 𝑎𝑙𝑙 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑟𝑒𝑐𝑜𝑟𝑑𝑠 (𝑓𝑢𝑙𝑙 𝑒𝑃𝐻𝐼) | **Not needed** | ❗High-risk confidential data 
 | 3 | 𝑅𝑒𝑎𝑑 𝑏𝑖𝑙𝑙𝑖𝑛𝑔 𝑠𝑢𝑚𝑚𝑎𝑟𝑖𝑒𝑠 | **Needed** | Source of data the AI-agent needs to answer the billing status questions
 | 4 | 𝑅𝑒𝑎𝑑 𝑓𝑢𝑙𝑙 𝑏𝑖𝑙𝑙𝑖𝑛𝑔 𝑎𝑛𝑑 𝑝𝑎𝑦𝑚𝑒𝑛𝑡 𝑑𝑎𝑡𝑎 | **Not needed** | ❗High-risk confidential data 
-| 5 | 𝑈𝑝𝑑𝑎𝑡𝑒 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑐𝑜𝑛𝑡𝑎𝑐𝑡 𝑑𝑒𝑡𝑎𝑖𝑙𝑠 | **Not needed** | Out of permissions controls
+| 5 | 𝑈𝑝𝑑𝑎𝑡𝑒 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑐𝑜𝑛𝑡𝑎𝑐𝑡 𝑑𝑒𝑡𝑎𝑖𝑙𝑠 | **Not needed** | Not aligned with the bot's defined purpose
 | 6 | 𝐼𝑠𝑠𝑢𝑒 𝑟𝑒𝑓𝑢𝑛𝑑𝑠 𝑢𝑝 𝑡𝑜 $500 𝑤𝑖𝑡ℎ𝑜𝑢𝑡 𝑎𝑝𝑝𝑟𝑜𝑣𝑎𝑙 | **Not needed** | ❗Out of permissions high-risk controls
 | 7 | 𝑆𝑒𝑛𝑑 𝑒𝑚𝑎𝑖𝑙 𝑎𝑠 𝑠𝑢𝑝𝑝𝑜𝑟𝑡@𝑛𝑜𝑟𝑡ℎ𝑤𝑖𝑛𝑑ℎ𝑒𝑎𝑙𝑡ℎ.𝑐𝑜𝑚 | **Needed with conditions** | Main AI-agent functionality to draft replies for a human agent, condition: approval from human
 | 8 | 𝐶𝑟𝑒𝑎𝑡𝑒 𝑎𝑛𝑑 𝑢𝑝𝑑𝑎𝑡𝑒 𝑠𝑢𝑝𝑝𝑜𝑟𝑡 𝑡𝑖𝑐𝑘𝑒𝑡𝑠 | **Needed** | Main AI-agent functionality
-| 9 | 𝐷𝑒𝑙𝑒𝑡𝑒 𝑡𝑖𝑐𝑘𝑒𝑡 ℎ𝑖𝑠𝑡𝑜𝑟𝑦 | **Not needed** | Out of permissions controls
+| 9 | 𝐷𝑒𝑙𝑒𝑡𝑒 𝑡𝑖𝑐𝑘𝑒𝑡 ℎ𝑖𝑠𝑡𝑜𝑟𝑦 | **Not needed** | Not aligned with the bot's defined purpose
