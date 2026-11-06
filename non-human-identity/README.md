@@ -113,6 +113,16 @@ One more log excerpt:
 **What happened:** Automated mass data access from an unauthorized external IP using the SupportBot token. 🚩
 
 **What it suggests:** Credential compromise and active Data Exfiltration **(ePHI theft) via an automated script.** 🚩
-- Additional findings: Threat actor is also testing the financial capabilities of the stolen API token.
 
+**Additional findings** – threat actor is also **testing the financial capabilities of the stolen API token.**
+
+**⚠️ First 3 IMMEDIATE Actions (Incident Response):**
+
+1. **Revoke & Rotate:** Immediately revoke the compromised SupportBot API token to cut off the attacker's access.
+
+2. **Network Containment:** Block the malicious Source IP (`198.51.100.77`) at the WAF/Firewall level to prevent further network intrusion.
+
+3. **Financial Audit & Freeze:** Audit billing logs to verify if the two issued refunds were successfully processed, and cancel any pending fraudulent transactions.
+
+*Follow-up:* Escalate the ePHI breach to senior management, conduct a full forensic investigation, and implement strict Non-Human Identity (NHI) controls to prevent recurrence.
 
