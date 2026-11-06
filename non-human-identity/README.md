@@ -66,12 +66,103 @@
 
 | # | Permission | Status | Note
 |---|---|---|---|
-| 1 | 𝑅𝑒𝑎𝑑 ℎ𝑒𝑙𝑝-𝑐𝑒𝑛𝑡𝑟𝑒 𝑎𝑟𝑡𝑖𝑐𝑙𝑒𝑠 | Needed
-| 2 | 𝑅𝑒𝑎𝑑 𝑎𝑙𝑙 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑟𝑒𝑐𝑜𝑟𝑑𝑠 (𝑓𝑢𝑙𝑙 𝑒𝑃𝐻𝐼) | Not needed
-| 3 | 𝑅𝑒𝑎𝑑 𝑏𝑖𝑙𝑙𝑖𝑛𝑔 𝑠𝑢𝑚𝑚𝑎𝑟𝑖𝑒𝑠 | Needed
-| 4 | 𝑅𝑒𝑎𝑑 𝑓𝑢𝑙𝑙 𝑏𝑖𝑙𝑙𝑖𝑛𝑔 𝑎𝑛𝑑 𝑝𝑎𝑦𝑚𝑒𝑛𝑡 𝑑𝑎𝑡𝑎 | Not needed
-| 5 | 𝑈𝑝𝑑𝑎𝑡𝑒 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑐𝑜𝑛𝑡𝑎𝑐𝑡 𝑑𝑒𝑡𝑎𝑖𝑙𝑠 | Not needed
-| 6 | 𝐼𝑠𝑠𝑢𝑒 𝑟𝑒𝑓𝑢𝑛𝑑𝑠 𝑢𝑝 𝑡𝑜 $500 𝑤𝑖𝑡ℎ𝑜𝑢𝑡 𝑎𝑝𝑝𝑟𝑜𝑣𝑎𝑙 | Not needed
-| 7 | 𝑆𝑒𝑛𝑑 𝑒𝑚𝑎𝑖𝑙 𝑎𝑠 𝑠𝑢𝑝𝑝𝑜𝑟𝑡@𝑛𝑜𝑟𝑡ℎ𝑤𝑖𝑛𝑑ℎ𝑒𝑎𝑙𝑡ℎ.𝑐𝑜𝑚 | Needed with conditions
-| 8 | 𝐶𝑟𝑒𝑎𝑡𝑒 𝑎𝑛𝑑 𝑢𝑝𝑑𝑎𝑡𝑒 𝑠𝑢𝑝𝑝𝑜𝑟𝑡 𝑡𝑖𝑐𝑘𝑒𝑡𝑠 | Needed
-| 9 | 𝐷𝑒𝑙𝑒𝑡𝑒 𝑡𝑖𝑐𝑘𝑒𝑡 ℎ𝑖𝑠𝑡𝑜𝑟𝑦 | Not needed
+| 1 | 𝑅𝑒𝑎𝑑 ℎ𝑒𝑙𝑝-𝑐𝑒𝑛𝑡𝑟𝑒 𝑎𝑟𝑡𝑖𝑐𝑙𝑒𝑠 | **Needed** | Fundamental source of safe data for AI-agent
+| 2 | 𝑅𝑒𝑎𝑑 𝑎𝑙𝑙 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑟𝑒𝑐𝑜𝑟𝑑𝑠 (𝑓𝑢𝑙𝑙 𝑒𝑃𝐻𝐼) | **Not needed** | ❗High-risk confidential data 
+| 3 | 𝑅𝑒𝑎𝑑 𝑏𝑖𝑙𝑙𝑖𝑛𝑔 𝑠𝑢𝑚𝑚𝑎𝑟𝑖𝑒𝑠 | **Needed** | Source of data the AI-agent needs to answer the billing status questions
+| 4 | 𝑅𝑒𝑎𝑑 𝑓𝑢𝑙𝑙 𝑏𝑖𝑙𝑙𝑖𝑛𝑔 𝑎𝑛𝑑 𝑝𝑎𝑦𝑚𝑒𝑛𝑡 𝑑𝑎𝑡𝑎 | **Not needed** | ❗High-risk confidential data 
+| 5 | 𝑈𝑝𝑑𝑎𝑡𝑒 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑐𝑜𝑛𝑡𝑎𝑐𝑡 𝑑𝑒𝑡𝑎𝑖𝑙𝑠 | **Not needed** | Not aligned with the bot's defined purpose
+| 6 | 𝐼𝑠𝑠𝑢𝑒 𝑟𝑒𝑓𝑢𝑛𝑑𝑠 𝑢𝑝 𝑡𝑜 $500 𝑤𝑖𝑡ℎ𝑜𝑢𝑡 𝑎𝑝𝑝𝑟𝑜𝑣𝑎𝑙 | **Not needed** | ❗Out of permissions high-risk controls
+| 7 | 𝑆𝑒𝑛𝑑 𝑒𝑚𝑎𝑖𝑙 𝑎𝑠 𝑠𝑢𝑝𝑝𝑜𝑟𝑡@𝑛𝑜𝑟𝑡ℎ𝑤𝑖𝑛𝑑ℎ𝑒𝑎𝑙𝑡ℎ.𝑐𝑜𝑚 | **Needed with conditions** | Main AI-agent functionality to draft replies for a human agent, condition: approval from human
+| 8 | 𝐶𝑟𝑒𝑎𝑡𝑒 𝑎𝑛𝑑 𝑢𝑝𝑑𝑎𝑡𝑒 𝑠𝑢𝑝𝑝𝑜𝑟𝑡 𝑡𝑖𝑐𝑘𝑒𝑡𝑠 | **Needed** | Main AI-agent functionality
+| 9 | 𝐷𝑒𝑙𝑒𝑡𝑒 𝑡𝑖𝑐𝑘𝑒𝑡 ℎ𝑖𝑠𝑡𝑜𝑟𝑦 | **Not needed** | Not aligned with the bot's defined purpose
+
+---
+
+**2. Governance findings:**
+
+| # | Identity management problem | Severity | Why it's risk |
+|---|---|---|---|
+| *1* | No assigned owner and regular monitoring | ‼️**Critical** | *Any technical issue, threat, hacker breach or malware injection cannot be noticed* 
+| *2* | No API token rotation policy | ‼️**Critical** | *Prolonged exposure of static credentials exponentially increases the likelihood of a breach* 
+| *3* | Same API token used across staging and production | ‼️**Critical** | *A compromise in the less-secure staging environment directly leads to a full production data breach (ePHI and financial).* 
+| *4* | No API token expiration date | **High** | *A stolen token remains active and usable indefinitely, providing stable backdoor access*
+
+---
+
+**3. Log Analysis & Incident Response:**  
+
+---
+Activity, last 7 days:
+```
+𝑃𝑎𝑡𝑖𝑒𝑛𝑡 𝑟𝑒𝑐𝑜𝑟𝑑𝑠 𝑟𝑒𝑎𝑑: 38,400 (𝑛𝑜𝑟𝑚𝑎𝑙 𝑟𝑎𝑛𝑔𝑒 𝑓𝑜𝑟 𝑎 𝑤𝑒𝑒𝑘: 35,000-45,000)
+𝐶𝑜𝑛𝑡𝑎𝑐𝑡 𝑑𝑒𝑡𝑎𝑖𝑙 𝑢𝑝𝑑𝑎𝑡𝑒𝑠: 3
+𝑅𝑒𝑓𝑢𝑛𝑑𝑠 𝑖𝑠𝑠𝑢𝑒𝑑: 2 ($120 𝑎𝑛𝑑 $310, 𝑛𝑜 ℎ𝑢𝑚𝑎𝑛 𝑎𝑝𝑝𝑟𝑜𝑣𝑎𝑙 𝑟𝑒𝑐𝑜𝑟𝑑𝑒𝑑)
+𝐸𝑚𝑎𝑖𝑙𝑠 𝑠𝑒𝑛𝑡 𝑎𝑠 𝑠𝑢𝑝𝑝𝑜𝑟𝑡@: 612
+𝑇𝑖𝑐𝑘𝑒𝑡𝑠 𝑐𝑟𝑒𝑎𝑡𝑒𝑑/𝑢𝑝𝑑𝑎𝑡𝑒𝑑: 1,150
+𝐷𝑒𝑙𝑒𝑡𝑖𝑜𝑛𝑠: 0
+```
+One more log excerpt:
+```
+𝑇𝑢𝑒 03:12-03:16 1,900 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑟𝑒𝑐𝑜𝑟𝑑𝑠 𝑟𝑒𝑎𝑑 𝑖𝑛 4 𝑚𝑖𝑛𝑢𝑡𝑒𝑠
+𝑆𝑜𝑢𝑟𝑐𝑒 𝐼𝑃: 198.51.100.77
+(𝑆𝑢𝑝𝑝𝑜𝑟𝑡𝐵𝑜𝑡 𝑛𝑜𝑟𝑚𝑎𝑙𝑙𝑦 𝑟𝑢𝑛𝑠 𝑓𝑟𝑜𝑚 192.0.2.40)
+```
+
+---
+
+**What happened:** Automated mass data access from an unauthorized external IP using the SupportBot token. 🚩
+
+**What it suggests:** Credential compromise and active Data Exfiltration **(ePHI theft) via an automated script.** 🚩
+
+**Additional findings** – threat actor is also **testing the financial capabilities of the stolen API token.**
+
+---
+
+**⚠️ First 3 IMMEDIATE Actions (Incident Response):**
+
+1. **Revoke & Rotate:** Immediately revoke the compromised SupportBot API token to cut off the attacker's access.
+
+2. **Network Containment:** Block the malicious Source IP (`198.51.100.77`) at the WAF/Firewall level to prevent further network intrusion.
+
+3. **Financial Audit & Freeze:** Audit billing logs to verify if the two issued refunds were successfully processed, and cancel any pending fraudulent transactions.
+
+*Follow-up:* Escalate the ePHI breach to senior management, conduct a full forensic investigation, and implement strict Non-Human Identity (NHI) controls to prevent recurrence.
+
+---
+
+## 🚥 Target State & Architecture (Controls for AI Agents)
+
+**To prevent future breaches and secure Non-Human Identities (NHIs)** like **`SupportBot`**, we must implement the following security controls:
+
+| 1. Strict Principle of Least Privilege (PoLP)
+|---|
+| Strip all non-essential permissions (e.g., ePHI access, direct refunds). The agent should only have read/write access necessary for its specific duties.
+
+| 2. Mandatory Token Lifecycle Management
+|---|
+| Implement automatic rotation for API tokens (e.g., every 30 days) and enforce strict expiration dates.
+
+| 3. Environment Isolation
+|---|
+| Separate the token, distinct API tokens for `staging` and `production` environments.
+
+| 4. Assigned Human Ownership
+|---|
+| Every AI agent must have a designated human owner (e.g., an IT or Support Lead) responsible for access reviews and anomaly alerts.
+
+| 5. Human-in-the-Loop (HITL) for Finance
+|---|
+| The AI agent must never execute data-altering or money-moving actions autonomously. All refunds and emails must be drafted by the AI but require explicit human approval before execution.
+
+
+
+---
+
+**🔥 Bonus: AI Autonomy Limits**
+
+*Should an AI agent ever approve refunds on its own?* 
+
+**No.** An AI agent should never have autonomous authority over financial transactions or critical data modifications. 
+
+The line is drawn at **execution**: AI can gather data, analyze context, and draft proposals (like filling out a refund form), but a verified human identity must always click the final "Approve" button to maintain accountability and Governance.
+
