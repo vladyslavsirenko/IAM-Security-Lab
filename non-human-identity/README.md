@@ -116,6 +116,8 @@ One more log excerpt:
 
 **Additional findings** – threat actor is also **testing the financial capabilities of the stolen API token.**
 
+---
+
 **⚠️ First 3 IMMEDIATE Actions (Incident Response):**
 
 1. **Revoke & Rotate:** Immediately revoke the compromised SupportBot API token to cut off the attacker's access.
@@ -125,4 +127,42 @@ One more log excerpt:
 3. **Financial Audit & Freeze:** Audit billing logs to verify if the two issued refunds were successfully processed, and cancel any pending fraudulent transactions.
 
 *Follow-up:* Escalate the ePHI breach to senior management, conduct a full forensic investigation, and implement strict Non-Human Identity (NHI) controls to prevent recurrence.
+
+---
+
+## 🚥 Target State & Architecture (Controls for AI Agents)
+
+**To prevent future breaches and secure Non-Human Identities (NHIs)** like **`SupportBot`**, we must implement the following security controls:
+
+| 1. Strict Principle of Least Privilege (PoLP)
+|---|
+| Strip all non-essential permissions (e.g., ePHI access, direct refunds). The agent should only have read/write access necessary for its specific duties.
+
+| 2. Mandatory Token Lifecycle Management
+|---|
+| Implement automatic rotation for API tokens (e.g., every 30 days) and enforce strict expiration dates.
+
+| 3. Environment Isolation
+|---|
+| Separate the token, distinct API tokens for `staging` and `production` environments.
+
+| 4. Assigned Human Ownership
+|---|
+| Every AI agent must have a designated human owner (e.g., an IT or Support Lead) responsible for access reviews and anomaly alerts.
+
+| 5. Human-in-the-Loop (HITL) for Finance
+|---|
+| The AI agent must never execute data-altering or money-moving actions autonomously. All refunds and emails must be drafted by the AI but require explicit human approval before execution.
+
+
+
+---
+
+**🔥 Bonus: AI Autonomy Limits**
+
+*Should an AI agent ever approve refunds on its own?* 
+
+**No.** An AI agent should never have autonomous authority over financial transactions or critical data modifications. 
+
+The line is drawn at **execution**: AI can gather data, analyze context, and draft proposals (like filling out a refund form), but a verified human identity must always click the final "Approve" button to maintain accountability and Governance.
 
