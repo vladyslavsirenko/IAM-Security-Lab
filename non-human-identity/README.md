@@ -75,3 +75,12 @@
 | 7 | 𝑆𝑒𝑛𝑑 𝑒𝑚𝑎𝑖𝑙 𝑎𝑠 𝑠𝑢𝑝𝑝𝑜𝑟𝑡@𝑛𝑜𝑟𝑡ℎ𝑤𝑖𝑛𝑑ℎ𝑒𝑎𝑙𝑡ℎ.𝑐𝑜𝑚 | **Needed with conditions** | Main AI-agent functionality to draft replies for a human agent, condition: approval from human
 | 8 | 𝐶𝑟𝑒𝑎𝑡𝑒 𝑎𝑛𝑑 𝑢𝑝𝑑𝑎𝑡𝑒 𝑠𝑢𝑝𝑝𝑜𝑟𝑡 𝑡𝑖𝑐𝑘𝑒𝑡𝑠 | **Needed** | Main AI-agent functionality
 | 9 | 𝐷𝑒𝑙𝑒𝑡𝑒 𝑡𝑖𝑐𝑘𝑒𝑡 ℎ𝑖𝑠𝑡𝑜𝑟𝑦 | **Not needed** | Not aligned with the bot's defined purpose
+
+**2. Governance findings:**
+
+| # | Identity management problem | Severity | Why it's risk |
+|---|---|---|---|
+| *1* | No assigned owner and regular monitoring | ‼️**Critical** | *Any technical issue, threat, hacker breach or malware injection cannot be noticed* 
+| *2* | No API token rotation policy | ‼️**Critical** | *Prolonged exposure of static credentials exponentially increases the likelihood of a breach* 
+| *3* | Same API token used across staging and production | ‼️**Critical** | *A compromise in the less-secure staging environment directly leads to a full production data breach (ePHI and financial).* 
+| *4* | No API token expiration date | **High** | *A stolen token remains active and usable indefinitely, providing stable backdoor access*
