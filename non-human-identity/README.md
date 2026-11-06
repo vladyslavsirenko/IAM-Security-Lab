@@ -76,6 +76,8 @@
 | 8 | 𝐶𝑟𝑒𝑎𝑡𝑒 𝑎𝑛𝑑 𝑢𝑝𝑑𝑎𝑡𝑒 𝑠𝑢𝑝𝑝𝑜𝑟𝑡 𝑡𝑖𝑐𝑘𝑒𝑡𝑠 | **Needed** | Main AI-agent functionality
 | 9 | 𝐷𝑒𝑙𝑒𝑡𝑒 𝑡𝑖𝑐𝑘𝑒𝑡 ℎ𝑖𝑠𝑡𝑜𝑟𝑦 | **Not needed** | Not aligned with the bot's defined purpose
 
+---
+
 **2. Governance findings:**
 
 | # | Identity management problem | Severity | Why it's risk |
@@ -84,3 +86,33 @@
 | *2* | No API token rotation policy | ‼️**Critical** | *Prolonged exposure of static credentials exponentially increases the likelihood of a breach* 
 | *3* | Same API token used across staging and production | ‼️**Critical** | *A compromise in the less-secure staging environment directly leads to a full production data breach (ePHI and financial).* 
 | *4* | No API token expiration date | **High** | *A stolen token remains active and usable indefinitely, providing stable backdoor access*
+
+---
+
+**3. Log Analysis & Incident Response:**  
+
+---
+Activity, last 7 days:
+```
+𝑃𝑎𝑡𝑖𝑒𝑛𝑡 𝑟𝑒𝑐𝑜𝑟𝑑𝑠 𝑟𝑒𝑎𝑑: 38,400 (𝑛𝑜𝑟𝑚𝑎𝑙 𝑟𝑎𝑛𝑔𝑒 𝑓𝑜𝑟 𝑎 𝑤𝑒𝑒𝑘: 35,000-45,000)
+𝐶𝑜𝑛𝑡𝑎𝑐𝑡 𝑑𝑒𝑡𝑎𝑖𝑙 𝑢𝑝𝑑𝑎𝑡𝑒𝑠: 3
+𝑅𝑒𝑓𝑢𝑛𝑑𝑠 𝑖𝑠𝑠𝑢𝑒𝑑: 2 ($120 𝑎𝑛𝑑 $310, 𝑛𝑜 ℎ𝑢𝑚𝑎𝑛 𝑎𝑝𝑝𝑟𝑜𝑣𝑎𝑙 𝑟𝑒𝑐𝑜𝑟𝑑𝑒𝑑)
+𝐸𝑚𝑎𝑖𝑙𝑠 𝑠𝑒𝑛𝑡 𝑎𝑠 𝑠𝑢𝑝𝑝𝑜𝑟𝑡@: 612
+𝑇𝑖𝑐𝑘𝑒𝑡𝑠 𝑐𝑟𝑒𝑎𝑡𝑒𝑑/𝑢𝑝𝑑𝑎𝑡𝑒𝑑: 1,150
+𝐷𝑒𝑙𝑒𝑡𝑖𝑜𝑛𝑠: 0
+```
+One more log excerpt:
+```
+𝑇𝑢𝑒 03:12-03:16 1,900 𝑝𝑎𝑡𝑖𝑒𝑛𝑡 𝑟𝑒𝑐𝑜𝑟𝑑𝑠 𝑟𝑒𝑎𝑑 𝑖𝑛 4 𝑚𝑖𝑛𝑢𝑡𝑒𝑠
+𝑆𝑜𝑢𝑟𝑐𝑒 𝐼𝑃: 198.51.100.77
+(𝑆𝑢𝑝𝑝𝑜𝑟𝑡𝐵𝑜𝑡 𝑛𝑜𝑟𝑚𝑎𝑙𝑙𝑦 𝑟𝑢𝑛𝑠 𝑓𝑟𝑜𝑚 192.0.2.40)
+```
+
+---
+
+**What happened:** Automated mass data access from an unauthorized external IP using the SupportBot token. 🚩
+
+**What it suggests:** Credential compromise and active Data Exfiltration **(ePHI theft) via an automated script.** 🚩
+- Additional findings: Threat actor is also testing the financial capabilities of the stolen API token.
+
+
