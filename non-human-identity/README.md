@@ -174,7 +174,7 @@ This week I looked at identity from a new angle: the "*user*" was not a person b
 `SupportBot` is an AI Agent, a service account with an API token, so it is an identity like any user, even if nobody logs in as a person. If it can read data, send emails and issue refunds, it needs an owner, a purpose and a lifecycle. I read about this in [source](https://www.microsoft.com/en-us/security/business/security-101/what-are-non-human-identities).
 
 ### **A truly orphaned account, again.**
-[In Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/edit/test/access-review/README.md), I learned that "*orphaned*" means an account nobody owns. `SupportBot` is exactly that: the owner field is blank and the contractor who created it has left. 
+[In Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review), I learned that "*orphaned*" means an account nobody owns. `SupportBot` is exactly that: the owner field is blank and the contractor who created it has left. 
 Nobody would notice a technical issue or a breach, and that was the first **Critical finding.**
 
 ### **Least privilege starts with the purpose.**
@@ -196,7 +196,7 @@ The real signal was the pattern:
 Good monitoring should look at timing, source and speed, not only totals.
 
 ### **Contain first, investigate after.**
-Same lesson [as in Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/blob/test/access-review/README.md), but faster this time: revoke and rotate the token, block the IP, check the two refunds. Forensics and escalation come right after the access is cut off.
+Same lesson [as in Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review), but faster this time: revoke and rotate the token, block the IP, check the two refunds. Forensics and escalation come right after the access is cut off.
 
 ### **The line for AI autonomy is execution.**
 AI can gather data, analyze and draft. Anything that moves money or changes data needs a verified human to approve it. 
