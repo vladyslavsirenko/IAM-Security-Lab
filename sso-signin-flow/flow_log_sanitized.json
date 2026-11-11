@@ -1,0 +1,335 @@
+[
+  {
+    "seq": 0,
+    "offset_s": -6.591,
+    "method": "GET",
+    "url": "id.atlassian.com/login",
+    "query": {},
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 76
+  },
+  {
+    "seq": 59,
+    "offset_s": 0.0,
+    "method": "GET",
+    "url": "id.atlassian.com/login/initiate/google",
+    "query": {
+      "loginType": "googleButton",
+      "prompt": "select_account",
+      "source": "loginScreen"
+    },
+    "status": 302,
+    "redirects_to": "accounts.google.com/o/oauth2/v2/auth",
+    "duration_ms": 136
+  },
+  {
+    "seq": 61,
+    "offset_s": 0.136,
+    "method": "GET",
+    "url": "accounts.google.com/o/oauth2/v2/auth",
+    "query": {
+      "response_type": "code",
+      "client_id": "[REDACTED]",
+      "code_challenge": "[REDACTED]",
+      "code_challenge_method": "S256",
+      "redirect_uri": "https://id.atlassian.com/login/google",
+      "scope": "openid email profile",
+      "state": "[REDACTED]",
+      "prompt": "select_account"
+    },
+    "status": 302,
+    "redirects_to": "accounts.google.com/v3/signin/identifier",
+    "duration_ms": 173
+  },
+  {
+    "seq": 62,
+    "offset_s": 0.308,
+    "method": "GET",
+    "url": "accounts.google.com/v3/signin/identifier",
+    "query": {
+      "opparams": "[REDACTED]",
+      "dsh": "[REDACTED]",
+      "client_id": "[REDACTED]",
+      "code_challenge": "[REDACTED]",
+      "code_challenge_method": "S256",
+      "o2v": "[REDACTED]",
+      "prompt": "select_account",
+      "redirect_uri": "https://id.atlassian.com/login/google",
+      "response_type": "code",
+      "scope": "openid email profile",
+      "service": "[REDACTED]",
+      "state": "[REDACTED]",
+      "flowName": "[REDACTED]",
+      "continue": "[REDACTED]",
+      "app_domain": "[REDACTED]",
+      "rart": "[REDACTED]"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 229
+  },
+  {
+    "seq": 75,
+    "offset_s": 0.976,
+    "method": "GET",
+    "url": "accounts.youtube.com/accounts/CheckConnection",
+    "query": {
+      "pmpo": "[REDACTED]",
+      "v": "[REDACTED]",
+      "timestamp": "[REDACTED]"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 122
+  },
+  {
+    "seq": 76,
+    "offset_s": 0.986,
+    "method": "GET",
+    "url": "accounts.google.com/_/bscframe",
+    "query": {},
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 46
+  },
+  {
+    "seq": 100,
+    "offset_s": 15.706,
+    "method": "GET",
+    "url": "accounts.google.com/CheckCookie",
+    "query": {
+      "continue": "[REDACTED]",
+      "service": "[REDACTED]",
+      "checkedDomains": "[REDACTED]",
+      "checkConnection": "[REDACTED]",
+      "pstMsg": "[REDACTED]",
+      "rart": "[REDACTED]",
+      "flowName": "[REDACTED]",
+      "client_id": "[REDACTED]",
+      "redirect_uri": "https://id.atlassian.com/login/google",
+      "scope": "openid email profile",
+      "o2v": "[REDACTED]",
+      "chtml": "[REDACTED]",
+      "gidl": "[REDACTED]",
+      "ydo": "[REDACTED]"
+    },
+    "status": 302,
+    "redirects_to": "accounts.youtube.com/accounts/SetSID",
+    "duration_ms": 75
+  },
+  {
+    "seq": 101,
+    "offset_s": 15.781,
+    "method": "GET",
+    "url": "accounts.youtube.com/accounts/SetSID",
+    "query": {
+      "ssdc": "[REDACTED]",
+      "sidt": "[REDACTED]",
+      "continue": "[REDACTED]",
+      "tcc": "[REDACTED]",
+      "dbus": "[REDACTED]",
+      "ydo": "[REDACTED]"
+    },
+    "status": 302,
+    "redirects_to": "accounts.google.pl/accounts/SetSID",
+    "duration_ms": 147
+  },
+  {
+    "seq": 102,
+    "offset_s": 15.929,
+    "method": "GET",
+    "url": "accounts.google.pl/accounts/SetSID",
+    "query": {
+      "ssdc": "[REDACTED]",
+      "sidt": "[REDACTED]",
+      "continue": "[REDACTED]",
+      "tcc": "[REDACTED]"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 186
+  },
+  {
+    "seq": 103,
+    "offset_s": 16.168,
+    "method": "GET",
+    "url": "accounts.google.com/signin/oauth/v3/consent",
+    "query": {
+      "authuser": "0",
+      "part": "[REDACTED]",
+      "flowName": "[REDACTED]",
+      "as": "[REDACTED]",
+      "client_id": "[REDACTED]",
+      "requestPath": "[REDACTED]",
+      "rapt": "[REDACTED]"
+    },
+    "status": 302,
+    "redirects_to": "id.atlassian.com/login/google",
+    "duration_ms": 178
+  },
+  {
+    "seq": 104,
+    "offset_s": 16.346,
+    "method": "GET",
+    "url": "id.atlassian.com/login/google",
+    "query": {
+      "state": "[REDACTED]",
+      "iss": "https://accounts.google.com",
+      "code": "[REDACTED]",
+      "scope": "[REDACTED]",
+      "authuser": "0",
+      "prompt": "none"
+    },
+    "status": 303,
+    "redirects_to": "id.atlassian.com/login/authorize",
+    "duration_ms": 412
+  },
+  {
+    "seq": 105,
+    "offset_s": 16.758,
+    "method": "GET",
+    "url": "id.atlassian.com/login/authorize",
+    "query": {
+      "token": "[REDACTED]"
+    },
+    "status": 303,
+    "redirects_to": "home.atlassian.com/SetCST/initiate",
+    "duration_ms": 136
+  },
+  {
+    "seq": 106,
+    "offset_s": 16.893,
+    "method": "GET",
+    "url": "home.atlassian.com/SetCST/initiate",
+    "query": {
+      "redirectTo": "[REDACTED]",
+      "anonymousId": "[REDACTED]"
+    },
+    "status": 302,
+    "redirects_to": "id.atlassian.com/login/authorize",
+    "duration_ms": 123
+  },
+  {
+    "seq": 107,
+    "offset_s": 16.986,
+    "method": "GET",
+    "url": "id.atlassian.com/login/authorize",
+    "query": {
+      "token": "[REDACTED]",
+      "state": "[REDACTED]"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 239
+  },
+  {
+    "seq": 108,
+    "offset_s": 17.272,
+    "method": "GET",
+    "url": "home.atlassian.com/SetCST",
+    "query": {
+      "cst": "[REDACTED]",
+      "continue": "[REDACTED]",
+      "anonymousId": "[REDACTED]",
+      "state": "[REDACTED]"
+    },
+    "status": 302,
+    "redirects_to": "home.atlassian.com/",
+    "duration_ms": 40
+  },
+  {
+    "seq": 111,
+    "offset_s": 17.312,
+    "method": "GET",
+    "url": "home.atlassian.com/",
+    "query": {
+      "utm_source": "identity"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 123
+  },
+  {
+    "seq": 181,
+    "offset_s": 17.724,
+    "method": "GET",
+    "url": "id.atlassian.com/login",
+    "query": {
+      "continue": "[REDACTED]",
+      "application": "atlas"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 70
+  },
+  {
+    "seq": 203,
+    "offset_s": 18.961,
+    "method": "GET",
+    "url": "id.atlassian.com/login/authorize",
+    "query": {
+      "continue": "[REDACTED]",
+      "application": "atlas",
+      "token": "[REDACTED]"
+    },
+    "status": 303,
+    "redirects_to": "home.atlassian.com/SetCST/initiate",
+    "duration_ms": 131
+  },
+  {
+    "seq": 206,
+    "offset_s": 19.092,
+    "method": "GET",
+    "url": "home.atlassian.com/SetCST/initiate",
+    "query": {
+      "redirectTo": "[REDACTED]",
+      "anonymousId": "[REDACTED]"
+    },
+    "status": 302,
+    "redirects_to": "id.atlassian.com/login/authorize",
+    "duration_ms": 40
+  },
+  {
+    "seq": 207,
+    "offset_s": 19.132,
+    "method": "GET",
+    "url": "id.atlassian.com/login/authorize",
+    "query": {
+      "continue": "[REDACTED]",
+      "application": "atlas",
+      "token": "[REDACTED]",
+      "state": "[REDACTED]"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 221
+  },
+  {
+    "seq": 208,
+    "offset_s": 19.403,
+    "method": "GET",
+    "url": "home.atlassian.com/SetCST",
+    "query": {
+      "cst": "[REDACTED]",
+      "continue": "[REDACTED]",
+      "anonymousId": "[REDACTED]",
+      "state": "[REDACTED]"
+    },
+    "status": 302,
+    "redirects_to": "home.atlassian.com/",
+    "duration_ms": 42
+  },
+  {
+    "seq": 210,
+    "offset_s": 19.444,
+    "method": "GET",
+    "url": "home.atlassian.com/",
+    "query": {
+      "utm_source": "identity"
+    },
+    "status": 200,
+    "redirects_to": null,
+    "duration_ms": 246
+  }
+]
