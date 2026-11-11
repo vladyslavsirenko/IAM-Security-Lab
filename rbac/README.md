@@ -146,25 +146,43 @@ Recommended Actions:
 
 ## 💡 What I learned:
 
-Week 2 was a different kind of task. Instead of finding bad accounts, I had to design the access properly for a Billing and flag what shouldn't be allowed in the first place. Everyone had access that was given by "one request at a time", and my job was to turn that mess into clean roles. 
+[In Week 1,](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review) the problem was people who left. This time everyone was still working, and **the access was still wrong.** 
 
-### **Role Design (RBAC Matrix).** 
-RBAC (Role-Based Access Control) means permissions are attached to a **role**, not to each person individually ([IBM explains it well](https://www.ibm.com/topics/rbac)). I took what each job actually needs from the job descriptions and turned it into a matrix with 4 roles: Billing Clerk, Billing Supervisor, Finance Manager and IT Support. Then I compared every person's current access with their role, and it was easy to see who had too much.
+Access had been granted one request at a time, and nobody had ever looked at the full picture. 👥
 
-Because access had been given one request at a time, permissions piled up over time (privilege creep). The biggest case was `Fraser` from IT Support: besides System Admin, he also had all 6 financial permissions.
+### **Privilege creep.**
+Five of the six people had permissions their job doesn't need, 13 extra permissions in total. Nobody did this on purpose: each request made sense on its own, and nobody ever removed anything. Only `Chloe` matched her role exactly.
 
-### **Segregation of Duties and Toxic Combinations.** 
-Last time I only learned what SoD is, this time I used it. A toxic combination is a pair of permissions that are harmless alone, but dangerous when one person holds both ([Okta](https://www.okta.com/blog/2025/05/prevent-toxic-access-combinations-with-separation-of-duties-in-okta-identity), [SecurEnds](https://www.securends.com/blog/toxic-combinations-in-sod/)). Nobody is checking that person's work. I found two in this lab:
+### **RBAC: design the role first, then assign people.**
+Instead of checking each person one by one, I started from the job descriptions and built four roles *(Billing Clerk, Billing Supervisor, Finance Manager, IT Support)*. 
 
-- **Create new payee + Approve payments** ➔ Ghost Vendor fraud: someone creates a fake vendor and pays it.
-- **Create invoices + Approve refunds** ➔ Refund fraud: money gets routed to personal accounts.
+Then every person's access could be compared against a role, and the errors became visible immediately. **A role is easier to review than six individual lists.**
+[I learned it here.](https://www.ibm.com/think/topics/rbac)
 
-### **Smooth Rollout & Migration Plan.** 
-Taking the extra permissions away immediately could break someone's daily work. So I used a parallel run: create the new clean roles, assign them next to the old permissions, tell the team and monitor for 1-2 weeks, and only then revoke the legacy access. It's the same idea as with `support-shared` in my [first lab](https://github.com/vladyslavsirenko/IAM-Security-Lab/blob/test/access-review/README.md): replace first, remove after.
+### **Toxic combinations.**
+[In Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review), I learned what SoD means in theory. Here I saw it in real data: one person who can **create a payee and approve payments** can send money to a fake vendor, and one who can **create invoices and approve refunds** can route money to themselves. 
 
-### **Just-In-Time (JIT) Access.** 
-`Fraser` is my top priority, but IT Support still needs a way to fix critical issues in the Billing system. JIT solves this: instead of permanent financial access, he can request temporary permissions (for example for 2 hours), a manager approves it, an audit alert is triggered, and the access is removed automatically when the time is over. This is called Zero Standing Privileges ([CrowdStrike](https://www.crowdstrike.com/en-us/cybersecurity-101/identity-security/just-in-time-access/)). In Microsoft Entra, this is done with [Privileged Identity Management (PIM)](https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure).
+[The permissions are harmless alone and dangerous together](https://www.okta.com/blog/industry-insights/prevent-toxic-access-combinations-with-separation-of-duties-in-okta-identity/), so I had to look at the combinations, not only at single permissions.
 
-**Main takeaway:** 
-good access design isn't about taking everything away. It's giving each role exactly what the job needs, making sure no one can run a risky process from start to end alone, and removing the extra access without breaking the business.
+### **Admin is not the same as "access to everything".**
+`Fraser` works in IT Support and keeps the system running, yet he had all 6 financial permissions on top of System Admin. 
+
+Technical access doesn't mean he should be involved in financial decisions. **He was the top priority because one account could both change and approve everything.**
+
+### **Just-in-Time access and zero standing privileges.**
+The fix for `Fraser` was not to take away his ability to help in an incident, but to remove standing access. He requests temporary elevated access (e.g. for 2 hours), a manager approves it, an audit alert is triggered, and it expires automatically.
+
+**I believe [JIT](https://www.crowdstrike.com/en-us/cybersecurity-101/identity-security/just-in-time-access/) is a good security approach in such cases.**
+
+### **Migrate in parallel, don't revoke abruptly.**
+The same lesson as with `support-shared` [in Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review): **don't cut access before the replacement works.**
+
+- Create the new roles, assign them alongside the legacy permissions, monitor for 1-2 weeks, and only then remove the old access. 
+
+*Otherwise the billing team can't do its job and the fix causes its own incident.*
+
+### **Main takeaway.**
+**Good access control is designed from the job,** not from the requests. 
+
+Define roles, check the dangerous combinations, give admins only what their work needs, and migrate carefully so the business keeps running.
 
