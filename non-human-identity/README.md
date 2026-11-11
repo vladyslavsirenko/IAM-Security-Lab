@@ -166,3 +166,45 @@ One more log excerpt:
 
 The line is drawn at **execution**: AI can gather data, analyze context, and draft proposals (like filling out a refund form), but a verified human identity must always click the final "Approve" button to maintain accountability and Governance.
 
+## 💡 What I learned:
+
+This week I looked at identity from a new angle: the "*user*" was not a person but an AI agent. The same governance questions apply, but the cost of ignoring them is higher, because an agent works fast and doesn't get tired. 🤖
+
+### **Non-Human Identities (NHI).**
+`SupportBot` is an AI Agent, a service account with an API token, so it is an identity like any user, even if nobody logs in as a person. If it can read data, send emails and issue refunds, it needs an owner, a purpose and a lifecycle. I read about this in [source](https://www.microsoft.com/en-us/security/business/security-101/what-are-non-human-identities).
+
+### **A truly orphaned account, again.**
+[In Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/edit/test/access-review/README.md), I learned that "*orphaned*" means an account nobody owns. `SupportBot` is exactly that: the owner field is blank and the contractor who created it has left. 
+Nobody would notice a technical issue or a breach, and that was the first **Critical finding.**
+
+### **Least privilege starts with the purpose.**
+Instead of asking "*what is it allowed to do?*", I asked "***what is it for?***" and checked each of the 9 permissions against that. 
+
+[Only 4 were needed](https://learn.microsoft.com/en-us/entra/identity-platform/secure-least-privileged-access), and one of them (sending email) only with a condition: a human approves every draft. 
+
+### **Static tokens are a standing backdoor.**
+*The token was never rotated, never expires and works in both staging and production.* 
+
+A stolen token stays usable forever, and **a leak from the weaker environment leads straight to production data.**
+
+### **"Normal" volume can hide a breach.**
+`38,400 records in a week is inside the normal range (35,000–45,000), so a volume alert would stay quiet.`
+
+The real signal was the pattern: 
+- 1,900 records in 4 minutes, at 03:12, from an IP the bot never uses. 
+
+Good monitoring should look at timing, source and speed, not only totals.
+
+### **Contain first, investigate after.**
+Same lesson [as in Week 1](https://github.com/vladyslavsirenko/IAM-Security-Lab/blob/test/access-review/README.md), but faster this time: revoke and rotate the token, block the IP, check the two refunds. Forensics and escalation come right after the access is cut off.
+
+### **The line for AI autonomy is execution.**
+AI can gather data, analyze and draft. Anything that moves money or changes data needs a verified human to approve it. 
+
+**If something goes wrong, there must be a person who answers for it.** I read more about this [here.](https://www.romaindelfosse.fr/en/blog/who-answers-when-the-agent-is-wrong/) 
+
+### **Main takeaway.**
+An AI agent is not **"just a tool"**. Give it an owner, only the access its job needs, a token that expires, and a human who approves anything irreversible. 
+This is the same IAM logic as for people, applied to a new type of identity. 
+
+*Human-factor, mistake in the work-flow with organization AI-agent can cost too much to ignore these rules.*
