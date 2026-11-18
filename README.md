@@ -7,21 +7,19 @@ A practical home lab environment and documentation repository built to demonstra
 
 > **By simulating a corporate IT environment, I wanted to prove my ability to perform initial troubleshooting, administer server platforms, and manage access according to security best practices.**
 
-## Job Requirements Map
-I structured this repository by reverse-engineering the **IT Operation Specialist** job description. 
+## Job Requirements Map 🗺️
+I structured this repository by reverse-engineering the **Workstation Support Associate** job description.
 
 This table shows exactly which requirement each part of my lab proves. ↓
 
 | Job Requirement | Where it's demonstrated |
 | :--- | :--- |
-| *"Administration on different platforms (Windows Server, VMware)"* | **[Windows Server Lab](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/windows-server-ad-lab)**: Setup of Windows Server 2022 Domain Controller via VirtualBox. |
-| *"TCP/IP networking knowledge, Server OS management"* | **[Windows Server Lab](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/windows-server-ad-lab)**: Configured static IP, DNS, GPOs, and AD DS roles. |
-| *"Monitoring IT infrastructure, systems and business applications"* | **[Non-Human Identity Audit](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/non-human-identity)**: Analyzed system activity logs to detect an automated ePHI data exfiltration breach. |
-| *"Reacting upon issue discovery in accordance to existing standards"* | **[Access Review Incident](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review)**: Executed immediate containment steps (revoke active sessions, disable accounts) for compromised identities. |
-| *"Understanding of importance and impact of performed tasks"* | **[RBAC Case](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/rbac)**: Designed Least Privilege access models and Security Groups. |
-| *"Evaluating and reviewing technical documentation"* | **[SSO Sign-in Flow](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/sso-signin-flow)**: Decoded and documented SAML/OAuth network requests in Plain English. |
-| *"Supporting L2 infrastructure / ITIL processes"* | Demonstrated through my professional QA experience (Jira, incident logging) outlined in my CV. |
-
+| *"Install, configure, and troubleshoot... servers, and network issues"* | **[Windows Server Lab](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/windows-server-ad-lab)**: Setup of Windows Server 2022 Domain Controller, DNS, and AD DS roles via VirtualBox. |
+| *"Maintain passwords, data integrity, and file system security"* | **[RBAC Case](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/rbac)**: Designed Least Privilege access models and enforced Group Policy (GPO) security rules. |
+| *"Ability to work with emerging technologies such as Generative AI tools"* | **[Non-Human Identity Audit](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/non-human-identity)**: Conducted log analysis and incident response for a compromised AI service account. |
+| *"Experience in reading and understanding technical manuals, procedures"* | **[SSO Sign-in Flow](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/sso-signin-flow)**: Researched RFCs and decoded complex SAML/OAuth network requests into Plain English. |
+| *"Participate in IT and infrastructure projects as needed"* | **[Access Review Incident](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review)**: Executed a full IAM audit of HR vs. Admin Portal exports to secure compromised leaver accounts. |
+| *"Communicate technical information to both technical and nontechnical personnel"* | Demonstrated through my professional QA experience (Jira, bug tracking, stakeholder communication) outlined in my CV. |
 ## Project Structure
 
 | Folder | What it shows |
