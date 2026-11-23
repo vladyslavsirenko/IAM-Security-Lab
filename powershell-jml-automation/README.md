@@ -1,4 +1,4 @@
-# PowerShell JML Automation ⚙️🔐
+# PowerShell Joiner-Mover-Leaver Automation ⚙️🔐
 
 ## 1. Scenario
 - **Lab Environment:** Windows Server 2022 Domain Controller (`lab.local`), built in [Week 3](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/windows-server-ad-lab).
