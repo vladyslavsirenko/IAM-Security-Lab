@@ -5,7 +5,7 @@ Building a functional enterprise IT environment from scratch.
 
 I installed Windows Server 2022 on a VirtualBox VM, promoted it to a Domain Controller (`lab.local`), and provisioned a structured Active Directory environment.
 
-**The goal:** Bridge the gap between IAM theory and systems administration by physically configuring Organizational Units (OUs), Security Groups, Users, and Group Policy Objects (GPOs).
+**The goal:** Deploy a functional Windows Server 2022 Domain Controller (`lab.local`) to manage departmental users through OUs and RBAC security groups, enforce password lockout protection via GPO, and prepare the directory for automated Joiner-Mover-Leaver operations.
 
 > This is a local lab environment. All configurations follow standard enterprise practices for Role-Based Access Control (RBAC) and least privilege.
 
@@ -101,7 +101,7 @@ Linking the lockout policy to the root `lab.local` domain means it automatically
 LDAP is how the system queries the directory structure to find where `j.doe` is located. 
 **Kerberos is what actually issues the ticket when John types his password to log in.**
 
-### **No automation (yet).**
-Creating 10 users manually through the GUI (ADUC) builds muscle memory, but doing this for a list of 500 users is impossible. 
+### **From manual GUI to PowerShell automation.**
+Creating 10 users through ADUC builds baseline familiarity, but onboarding or offboarding at scale requires scripts. 
 
-> The next step in my lab plan is automating the Joiner/Mover/Leaver lifecycle with PowerShell (`New-ADUser`).
+**This directory structure is now automated in [Week 4: PowerShell JML Automation](../powershell-jml-automation).**

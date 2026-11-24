@@ -1,39 +1,49 @@
-# 📂 IT Operations & IAM Portfolio 
+# 📂 IAM & IT Operations Lab
 
-## Overview
-A practical home lab environment and documentation repository built to demonstrate hands-on skills in IT infrastructure administration, Windows Server management, and Identity & Access Management (IAM). 
+![Windows Server 2022](https://img.shields.io/badge/Windows%20Server-2022-0078D6?style=flat-square&logo=windows&logoColor=white)
+![Active Directory](https://img.shields.io/badge/Active%20Directory-AD%20DS%20%2F%20GPO-1E40AF?style=flat-square)
+![PowerShell](https://img.shields.io/badge/PowerShell-JML%20Automation-5391FE?style=flat-square&logo=powershell&logoColor=white)
+![OAuth 2.0 / OIDC](https://img.shields.io/badge/Auth-OAuth%202.0%20%2F%20OIDC-0F766E?style=flat-square)
+![IAM](https://img.shields.io/badge/IAM-RBAC%20%2F%20SoD%20%2F%20NHI-374151?style=flat-square)
 
-> **I built this project to bridge the gap between theoretical knowledge and practical application.**
+## Goal
 
-> **By simulating a corporate IT environment, I wanted to prove my ability to perform initial troubleshooting, administer server platforms, and manage access according to security best practices.**
+Run and secure a simulated corporate identity and Windows infrastructure environment (`lab.local`) by performing day-to-day IT Operations and IAM tasks:
 
-## Job Requirements Map 🗺️
-I structured this repository by reverse-engineering the **Workstation Support Associate** job description.
+- **Deploy and administer Active Directory:** build a Windows Server 2022 Domain Controller with DNS, departmental OUs, RBAC security groups, and GPO account lockout enforcement.
+- **Automate the Joiner-Mover-Leaver (JML) lifecycle:** replace manual AD GUI work with PowerShell scripts that onboard users from HR CSV exports, strip legacy permissions on department transfers, quarantine offboarded accounts, and report 90+ day inactive accounts.
+- **Investigate incidents and govern access:** reconcile HR vs. application exports, eliminate toxic Segregation of Duties (SoD) combinations, lock down compromised Non-Human Identities (AI service accounts), and trace live OAuth 2.0 / OIDC authentication traffic.
 
-This table shows exactly which requirement each part of my lab proves. ↓
+---
 
-| Job Requirement | Where it's demonstrated |
-| :--- | :--- |
-| *"Install, configure, and troubleshoot... servers, and network issues"* | **[Windows Server Lab](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/windows-server-ad-lab)**: Setup of Windows Server 2022 Domain Controller, DNS, and AD DS roles via VirtualBox. |
-| *"Maintain passwords, data integrity, and file system security"* | **[RBAC Case](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/rbac)**: Designed Least Privilege access models and enforced Group Policy (GPO) security rules. |
-| *"Ability to work with emerging technologies such as Generative AI tools"* | **[Non-Human Identity Audit](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/non-human-identity)**: Conducted log analysis and incident response for a compromised AI service account. |
-| *"Experience in reading and understanding technical manuals, procedures"* | **[SSO Sign-in Flow](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/sso-signin-flow)**: Researched RFCs and decoded complex SAML/OAuth network requests into Plain English. |
-| *"Participate in IT and infrastructure projects as needed"* | **[Access Review Incident](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review)**: Executed a full IAM audit of HR vs. Admin Portal exports to secure compromised leaver accounts. |
-| *"Communicate technical information to both technical and nontechnical personnel"* | Demonstrated through my professional QA experience (Jira, bug tracking, stakeholder communication) outlined in my CV. |
-## Project Structure
+## Lab Index & Outcomes
 
-| Folder | What it shows |
-| :--- | :--- |
-| **[windows-server-ad-lab](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/windows-server-ad-lab)** | The core IT environment: Active Directory, OUs, DNS, and Group Policy. |
-| **[access-review](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/access-review)** | Security audit of HR vs. Admin Portal exports, uncovering compromised leaver accounts. |
-| **[non-human-identity](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/non-human-identity)** | Log analysis and incident response for a compromised AI service account. |
-| **[sso-signin-flow](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/sso-signin-flow)** | Deep dive into SSO authentication protocols (SAML, OAuth 2.0, OIDC). |
-| **[rbac](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/rbac)** | Role-Based Access Control logic and lessons learned. |
-| **[diagrams](https://github.com/vladyslavsirenko/IAM-Security-Lab/tree/main/diagrams)** | Architecture and process flow diagrams for all labs (currently features the SSO flow). |
+| Lab | Task Performed | Key Outcome / Evidence |
+| :--- | :--- | :--- |
+| **[powershell-jml-automation](./powershell-jml-automation)** | Automated Joiner, Mover, Leaver, and 90-day inactivity reporting in PowerShell | 4 tested `.ps1` scripts with CSV role mapping, duplicate checks, legacy group removal, and console screenshots |
+| **[windows-server-ad-lab](./windows-server-ad-lab)** | Deployed Windows Server 2022 DC (`lab.local`) with DNS, OUs, RBAC groups, and GPOs | Structured 4-department directory, naming conventions, and root-linked brute-force lockout policy (5 attempts / 30 min) |
+| **[non-human-identity](./non-human-identity)** | Audited an unowned AI agent (`svc-supportbot`) and investigated anomalous access logs | Caught 1,900 ePHI records read in 4 minutes from an unauthorized IP (`198.51.100.77`) and 2 unapproved refunds; defined 5 NHI controls |
+| **[access-review](./access-review)** | Reconciled HR termination records against Patient Admin Portal users | Isolated 2 compromised leaver accounts (including 1 Admin), 1 shared support login, and 1 orphaned admin; built containment plan |
+| **[rbac](./rbac)** | Audited Billing system permissions and designed a Least Privilege role matrix | Eliminated 13 excess permissions and 2 toxic SoD combinations using a parallel-run migration plan and 2-hour JIT admin access |
+| **[sso-signin-flow](./sso-signin-flow)** | Captured and traced a live Google → Atlassian OAuth 2.0 / OIDC sign-in flow | Sanitized exposed session token from raw capture, published 12-step HTTP `302/303` log (`PKCE S256`) and sequence diagram |
+| **[diagrams](./diagrams)** | Built architecture and authentication flow diagrams | Visual sign-in sequence diagram linked directly inside the SSO lab |
 
-## Ongoing Roadmap (Weeks 4-6)
-Currently actively working on expanding this lab with:
+---
 
-> **PowerShell Automation:** Writing scripts to automate the Joiner/Mover/Leaver lifecycle (`New-ADUser`, `Disable-ADAccount`).
+## Technical Stack Used in Labs
 
-> **Cloud Identity:** Configuring a Microsoft Entra ID tenant and Conditional Access policies.
+- **Infrastructure & Directory:** Windows Server 2022, Active Directory (AD DS), DNS, Group Policy (GPO), Organizational Units (OUs), VirtualBox
+- **Automation & Data:** PowerShell (`ActiveDirectory` module, CSV pipelines, hash-table mapping), Git, JSON
+- **Identity & Auth:** RBAC, Joiner-Mover-Leaver (JML), Segregation of Duties (SoD), Non-Human Identities (NHI), Just-in-Time (JIT) Access, OAuth 2.0, OIDC (PKCE `S256`)
+- **Investigation & Governance:** Access Reviews, System & HTTP Log Analysis (Browser DevTools), OWASP Risk Rating, Incident Containment
+
+---
+
+## Roadmap
+
+- [x] **Week 1:** IAM Access Review & Compromised Leaver Containment (`access-review`)
+- [x] **Week 2:** RBAC Matrix, SoD Remediation & Parallel-Run Migration (`rbac`)
+- [x] **Week 3:** Non-Human Identity (AI Agent) Audit, Live OAuth 2.0/OIDC Trace & Windows Server 2022 AD DC (`non-human-identity`, `sso-signin-flow`, `windows-server-ad-lab`)
+- [x] **Week 4:** PowerShell Joiner-Mover-Leaver Automation & Stale Account Reporting (`powershell-jml-automation`)
+- [ ] **Week 5:** Cloud Identity — Microsoft Entra ID tenant setup, MFA, and Conditional Access policies
+- [ ] **Week 6:** Linux & Cloud Operations fundamentals (service/log troubleshooting and container basics)
